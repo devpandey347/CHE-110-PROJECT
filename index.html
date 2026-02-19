@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Impacts on Transportation Industry of India — Research Report</title>
+    <meta name="description"
+        content="In-depth academic research on how renewable energy technologies are transforming India's transportation sector: opportunities, challenges, and implications.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Fixed background image layers — one per section, crossfade on scroll -->
+    <div class="bg-layers" aria-hidden="true">
+        <div class="bg-layer active" data-for="hero"
+            style="background-image: url('https://picsum.photos/id/1039/1920/1080');">
+        </div>
+        <div class="bg-layer" data-for="introduction"
+            style="background-image: url('https://picsum.photos/id/1018/1920/1080');">
+        </div>
+        <div class="bg-layer" data-for="problem"
+            style="background-image: url('https://picsum.photos/id/1071/1920/1080');">
+        </div>
+        <div class="bg-layer" data-for="technologies"
+            style="background-image: url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="bg-layer" data-for="chemistry"
+            style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="bg-layer" data-for="opportunities"
+            style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="bg-layer" data-for="policies"
+            style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="bg-layer" data-for="future"
+            style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="bg-layer" data-for="conclusion"
+            style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="bg-layer" data-for="references"
+            style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+    </div>
+
+    <!-- Reading Progress -->
+    <div id="progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="nav-brand">CHE-110 • Research Report</div>
+            <ul class="nav-links">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#chemistry">Chemistry</a></li>
+                <li><a href="#opportunities">Opportunities</a></li>
+                <li><a href="#policies">Policies</a></li>
+                <li><a href="#future">Future</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-layout">
+        <main class="page-main">
+
+            <!-- ═══════════════════════ HERO ═══════════════════════ -->
+            <header class="section-block" id="hero">
+                <div class="section-overlay hero-overlay"></div>
+                <div class="hero-content">
+                    <p class="project-tag">Advanced Research Project • Chemical Engineering</p>
+                    <h1>Renewable Energy Impacts on the Transportation Industry of India</h1>
+                    <p class="subtitle">Opportunities, Implications, and the Road to a Sustainable Mobility Ecosystem
+                    </p>
+                    <div class="hero-meta">
+                        <span>February 2026</span>
+                    </div>
+                    <a href="#introduction" class="hero-cta">Read the Research ↓</a>
+                </div>
+            </header>
+
+            <!-- ═══════════════════════ 1. INTRODUCTION ═══════════════════════ -->
+            <section class="section-block" id="introduction">
+                <div class="section-overlay"></div>
+                <div class="section-inner">
+                    <span class="section-number reveal">Section 01</span>
+                    <h2 class="section-heading reveal">Introduction</h2>
+
+                    <p class="lead-text reveal">
+                        The transportation sector stands at a critical juncture in India's developmental narrative. As
+                        the
+                        world's third-largest emitter of greenhouse gases, India faces the dual challenge of sustaining
+                        rapid
+                        economic growth while mitigating the severe environmental consequences of fossil fuel
+                        dependency.
+                    </p>
+
+                    <p class="reveal">
+                        Historically, India's transport infrastructure has been heavily reliant on imported crude oil,
+                        which not
+                        only strains the national exchequer but also contributes significantly to urban air pollution
+                        and
+                        climate change. With the automotive industry contributing to approximately 7% of India's GDP,
+                        any
+                        structural shift in this sector has profound macroeconomic implications. The transition to
+                        renewable
+                        energy-driven transport is not merely a technological upgrade but a systemic overhaul
+                        necessitated by
+                        the urgent need for energy security and environmental stewardship <a href="#ref-1"
+                            class="citation">[1]</a>.
+                    </p>
+
+                    <p class="reveal">
+                        This research examines how renewable energy technologies — including electric vehicles (EVs),
+                        green
+                        hydrogen fuel cells, biofuels, and electrified rail systems — are beginning to reshape India's
+                        transportation landscape. The analysis draws upon data from the International Energy Agency
+                        (IEA), NITI
+                        Aayog, the Ministry of New and Renewable Energy (MNRE), and the Council on Energy, Environment
+                        and Water
+                        (CEEW) to provide a comprehensive assessment of both the opportunities and the complex
+                        challenges that
+                        lie ahead. The study also incorporates a chemical engineering perspective to explain the
+                        fundamental
+                        science behind these technologies, making it relevant to both policy audiences and technical
+                        communities
+                        <a href="#ref-2" class="citation">[2]</a>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════ 2. PROBLEM STATEMENT ═══════════════════════ -->
+            <section class="section-block" id="problem">
+                <div class="section-overlay"></div>
+                <div class="section-inner">
+                    <span class="section-number reveal">Section 02</span>
+                    <h2 class="section-heading reveal">Problem Statement: India's Transport Crisis</h2>
+
+                    <p class="reveal">
+                        The scale of India's transport problem is staggering. As of 2024, over 350 million vehicles are
+                        registered in the country, a number that has been growing at a compound annual rate of nearly
+                        10% over
+                        the past decade. This explosive growth in motorization has been driven by rising disposable
+                        incomes,
+                        rapid urbanization — with over 600 million Indians now living in urban areas — and the absence,
+                        until
+                        recently, of viable public transport alternatives in most Indian cities. The consequences of
+                        this
+                        unchecked growth are felt across environmental, economic, and public health dimensions <a
+                            href="#ref-3" class="citation">[3]</a>.
+                    </p>
+
+                    <div class="stats-strip reveal">
+                        <div class="stat-item">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-desc">Crude oil imported</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">14%</div>
+                            <div class="stat-desc">CO₂ from transport</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">350M+</div>
+                            <div class="stat-desc">Registered vehicles</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">$150B</div>
+                            <div class="stat-desc">Annual oil import bill</div>
+                        </div>
+                    </div>
+
+                    <h3 class="reveal">Environmental and Health Impact</h3>
+                    <p class="reveal">
+                        The environmental cost of India's fossil-fuel-dependent transport is immense. The transport
+                        sector is
+                        responsible for approximately 14% of the country's total CO₂ emissions, consuming nearly 70% of
+                        all
+                        diesel produced domestically and 99.6% of all petrol. But the damage goes far beyond carbon
+                        dioxide.
+                        Vehicles emit a complex cocktail of pollutants including particulate matter (PM2.5 and PM10),
+                        nitrogen
+                        oxides (NOₓ), carbon monoxide (CO), sulfur dioxide (SO₂), and volatile organic compounds (VOCs).
+                        According to the World Air Quality Report 2023 published by IQAir, 21 of the world's 30 most
+                        polluted
+                        cities are in India, with vehicular emissions identified as a primary contributor in every case
+                        <a href="#ref-4" class="citation">[4]</a>.
+                    </p>
+                    <p class="reveal">
+                        The public health implications are devastating. A landmark study published in The Lancet
+                        estimated that
+                        air pollution — of which vehicular emissions are a major component — contributed to
+                        approximately 1.67
+                        million premature deaths in India in 2019. Respiratory diseases, cardiovascular complications,
+                        and lung
+                        cancer rates in Indian urban centres are significantly elevated compared to rural areas, with
+                        medical
+                        researchers drawing a direct correlation to exposure to vehicular pollutants. The economic cost
+                        of this
+                        health burden is estimated at 1.36% of GDP, according to the World Bank <a href="#ref-5"
+                            class="citation">[5]</a>.
+                    </p>
+
+                    <h3 class="reveal">Economic Vulnerability and Energy Security</h3>
+                    <p class="reveal">
+                        Beyond the environmental dimension, India's transport sector represents a critical vulnerability
+                        in
+                        national energy security. The country imports over 85% of its crude oil requirements, making it
+                        the
+                        world's third-largest oil importer after China and the United States. In the fiscal year
+                        2023-24,
+                        India's petroleum import bill exceeded $150 billion, representing roughly 25% of total
+                        merchandise
+                        imports and placing enormous pressure on the current account balance. This dependency leaves the
+                        Indian
+                        economy acutely sensitive to geopolitical disruptions — as demonstrated during the 2022
+                        Russia-Ukraine
+                        conflict when crude oil prices spiked above $120 per barrel, triggering domestic fuel price
+                        hikes and
+                        inflationary pressures across the supply chain <a href="#ref-6" class="citation">[6]</a>.
+                    </p>
+                    <p class="reveal">
+                        The strategic imperative for decoupling transportation from imported petroleum is therefore not
+                        just an
+                        environmental argument but a fundamental question of economic resilience and national
+                        sovereignty.
+                        Renewable energy technologies offer a credible pathway to achieve this decoupling, and the
+                        following
+                        sections examine the most promising avenues.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════ 3. TECHNOLOGIES ═══════════════════════ -->
+            <section class="section-block" id="technologies">
+                <div class="section-overlay"></div>
+                <div class="section-inner">
+                    <span class="section-number reveal">Section 03</span>
+                    <h2 class="section-heading reveal">Renewable Energy Technologies in Transportation</h2>
+
+                    <p class="reveal">
+                        The transition from fossil fuels to renewable energy in India's transport sector is being driven
+                        by four
+                        principal technologies, each at a different stage of maturity and adoption. Together, they
+                        represent a
+                        comprehensive strategy that addresses different segments of the mobility ecosystem — from urban
+                        last-mile connectivity to long-haul freight logistics.
+                    </p>
+
+                    <h3 class="reveal">3.1 Electric Vehicles (EVs)</h3>
+                    <p class="reveal">
+                        Electric mobility is the most commercially mature and rapidly scaling clean transport solution
+                        available
+                        today. An electric vehicle replaces the conventional internal combustion engine (ICE) with an
+                        electric
+                        motor powered by a rechargeable lithium-ion battery pack. The efficiency advantage is dramatic:
+                        a
+                        typical electric motor converts 85-90% of electrical energy into mechanical energy at the
+                        wheels,
+                        compared to just 20-30% for a petrol engine, where the majority of energy is lost as waste heat.
+                        This
+                        translates into significantly lower per-kilometer operating costs — typically ₹1-1.5/km for an
+                        EV versus
+                        ₹5-7/km for a comparable petrol vehicle <a href="#ref-7" class="citation">[7]</a>.
+                    </p>
+                    <p class="reveal">
+                        In India, the EV revolution has been led by the two-wheeler and three-wheeler segments, which
+                        together
+                        account for over 90% of EV sales. Companies such as Ola Electric, Ather Energy, TVS Motor, and
+                        Bajaj
+                        Auto have launched increasingly competitive electric scooter models, while Tata Motors dominates
+                        the
+                        passenger car EV segment with the Nexon EV and Tiago EV. The Indian EV market recorded 1.52
+                        million unit
+                        sales in 2024, a 49% year-on-year increase, signaling that the inflection point for mass
+                        adoption may
+                        have arrived. However, the "greenness" of an EV is ultimately determined by the source of
+                        electricity
+                        used for charging. With India's grid still deriving approximately 55% of its power from coal,
+                        the
+                        lifecycle carbon footprint of an EV in India is lower than a petrol vehicle but not zero. The
+                        government's target of 500 GW of renewable energy capacity by 2030 is therefore critical to
+                        maximizing
+                        the climate benefits of EV adoption <a href="#ref-8" class="citation">[8]</a>.
+                    </p>
+
+                    <h3 class="reveal">3.2 Biofuels and Ethanol Blending</h3>
+                    <p class="reveal">
+                        Biofuels represent an important transitional solution, particularly for the existing fleet of
+                        hundreds
+                        of millions of ICE vehicles that cannot be retired overnight. The Government of India has
+                        pursued an
+                        aggressive Ethanol Blending Programme (EBP), which has successfully increased the proportion of
+                        ethanol
+                        in petrol from less than 2% in 2014 to over 12% by 2024, with a target of 20% (E20) by 2025-26.
+                        Ethanol,
+                        produced primarily from sugarcane molasses, surplus rice, and damaged foodgrains through the
+                        process of
+                        fermentation, is a partially oxygenated fuel that burns more completely than pure petrol,
+                        reducing
+                        emissions of carbon monoxide and unburned hydrocarbons <a href="#ref-9"
+                            class="citation">[9]</a>.
+                    </p>
+                    <p class="reveal">
+                        The programme has the dual benefit of reducing crude oil imports — the government estimates
+                        annual
+                        savings of ₹30,000 crore at E20 levels — and providing supplementary income to farmers through
+                        the
+                        procurement of feedstock. However, the programme is not without controversy. Critics point to
+                        the
+                        water-intensive nature of sugarcane cultivation, concerns about diverting food crops to fuel
+                        production,
+                        and the fact that ethanol blending reduces (but does not eliminate) tailpipe emissions.
+                        Nevertheless, as
+                        a practical, near-term measure to reduce India's oil dependency, the EBP has been one of the
+                        most
+                        successful policy interventions in the energy sector.
+                    </p>
+
+                    <h3 class="reveal">3.3 Green Hydrogen Fuel Cells</h3>
+                    <p class="reveal">
+                        For the segments of the transport industry where battery-electric solutions face fundamental
+                        limitations
+                        — primarily long-haul trucking, intercity buses, and potentially maritime and aviation
+                        applications —
+                        green hydrogen produced through the electrolysis of water using renewable electricity offers a
+                        transformative alternative. A hydrogen fuel cell generates electricity on board the vehicle
+                        through an
+                        electrochemical reaction between hydrogen and oxygen, with pure water vapor as the only
+                        emission. The
+                        refueling time is comparable to conventional diesel — approximately 10-15 minutes for a full
+                        tank — and
+                        the range can exceed 500 km for heavy-duty vehicles, addressing the two key limitations of
+                        battery-electric technology for these applications <a href="#ref-10" class="citation">[10]</a>.
+                    </p>
+                    <p class="reveal">
+                        India's National Green Hydrogen Mission, launched in January 2023 with an initial outlay of
+                        ₹19,744
+                        crore, aims to make the country a global hub for green hydrogen production and utilization. The
+                        mission
+                        targets production capacity of 5 million metric tonnes per annum (MTPA) by 2030. Pilot projects
+                        have
+                        already been initiated for hydrogen-powered buses in Delhi and Leh, and Indian Oil Corporation
+                        is
+                        developing hydrogen dispensing infrastructure at select retail outlets. While the technology is
+                        currently expensive — green hydrogen costs approximately $4-5/kg compared to $1.5-2/kg for grey
+                        hydrogen
+                        produced from natural gas — costs are projected to fall below $2/kg by 2030 as electrolyzer
+                        technology
+                        matures and renewable electricity costs continue to decline.
+                    </p>
+
+                    <h3 class="reveal">3.4 Railway Electrification</h3>
+                    <p class="reveal">
+                        Indian Railways, the fourth-largest railway network in the world, has undertaken one of the most
+                        ambitious electrification programmes globally. As of December 2024, approximately 93% of the
+                        broad-gauge
+                        network — spanning over 59,000 route kilometers — has been electrified, up from just 40% in
+                        2014. The
+                        shift from diesel to electric traction reduces direct emissions to zero at the point of use,
+                        while also
+                        being significantly more energy-efficient. An electric locomotive is approximately three times
+                        more
+                        energy-efficient than a diesel locomotive in terms of net traction energy per gross
+                        tonne-kilometer.
+                        Indian Railways has committed to achieving "net-zero carbon emissions" by 2030, and is
+                        supplementing
+                        grid-based electrification with dedicated solar and wind installations along railway corridors
+                        <a href="#ref-11" class="citation">[11]</a>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════ 4. CHEMISTRY ═══════════════════════ -->
+            <section class="section-block" id="chemistry">
+                <div class="section-overlay"></div>
+                <div class="section-inner">
+                    <span class="section-number reveal">Section 04</span>
+                    <h2 class="section-heading reveal">Chemical Engineering Perspective</h2>
+
+                    <p class="reveal">
+                        A rigorous understanding of the chemical reactions and electrochemical processes underpinning
+                        transport
+                        energy systems is essential for evaluating their efficiency, environmental impact, and
+                        scalability. This
+                        section examines the key reactions from a chemical engineering standpoint.
+                    </p>
+
+                    <h3 class="reveal">4.1 Combustion of Petrol (Octane)</h3>
+                    <p class="reveal">
+                        The internal combustion engine operates on the principle of controlled explosive combustion of
+                        hydrocarbon fuels. When octane (C₈H₁₈), a primary component of petrol, is ignited in the
+                        presence of
+                        atmospheric oxygen within the engine cylinder, it undergoes a rapid exothermic oxidation
+                        reaction
+                        producing carbon dioxide, water vapor, and heat energy that drives the piston.
+                    </p>
+                    <div class="equation-box reveal">
+                        <h4>Balanced Combustion Reaction (Petrol/Octane)</h4>
+                        <div class="formula">2C₈H₁₈ + 25O₂ → 16CO₂ + 18H₂O + Energy (Heat)</div>
+                        <p class="equation-note">Each litre of petrol burned produces approximately 2.31 kg of CO₂. At
+                            India's
+                            average vehicle mileage of 15 km/litre, this equates to roughly 154 g of CO₂ per kilometer
+                            traveled.
+                        </p>
+                    </div>
+
+                    <h3 class="reveal">4.2 Ethanol Fermentation</h3>
+                    <p class="reveal">
+                        Bioethanol production relies on the anaerobic fermentation of simple sugars (glucose) by yeast
+                        organisms
+                        (Saccharomyces cerevisiae). This biological process, fundamental to India's Ethanol Blending
+                        Programme,
+                        converts agricultural feedstock into a liquid fuel that can be blended with petrol or used
+                        independently.
+                    </p>
+                    <div class="equation-box reveal">
+                        <h4>Ethanol Fermentation Reaction</h4>
+                        <div class="formula">C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂</div>
+                        <p class="equation-note">While CO₂ is released during fermentation, it is approximately equal to
+                            the CO₂
+                            absorbed by the crop during its growth phase through photosynthesis, making it a
+                            near-carbon-neutral
+                            cycle when assessed on a lifecycle basis.</p>
+                    </div>
+
+                    <h3 class="reveal">4.3 Hydrogen Fuel Cell</h3>
+                    <p class="reveal">
+                        The Proton Exchange Membrane (PEM) fuel cell is the most widely used type for transport
+                        applications. At
+                        the anode, hydrogen gas is oxidized, releasing protons (H⁺) and electrons. The electrons flow
+                        through an
+                        external circuit generating electricity, while the protons pass through the membrane to combine
+                        with
+                        oxygen at the cathode, forming water.
+                    </p>
+                    <div class="equation-box reveal">
+                        <h4>Hydrogen Fuel Cell Electrochemical Reaction</h4>
+                        <div class="formula">2H₂ + O₂ → 2H₂O + <span class="energy">Electrical Energy</span></div>
+                        <p class="equation-note">The only byproduct is pure water. Fuel cell efficiency (50-60%)
+                            significantly
+                            exceeds that of internal combustion engines (20-30%), and when powered by green hydrogen,
+                            this
+                            represents a truly zero-emission transport pathway.</p>
+                    </div>
+
+                    <h3 class="reveal">4.4 Lithium-Ion Battery: Electrochemistry</h3>
+                    <p class="reveal">
+                        The lithium-ion battery, the core energy storage device in all modern EVs, operates on the
+                        principle of
+                        reversible intercalation. During discharge, lithium ions (Li⁺) deintercalate from the graphite
+                        anode,
+                        travel through the liquid electrolyte (typically LiPF₆ dissolved in an organic carbonate
+                        solvent), and
+                        intercalate into the layered metal oxide cathode. This ion movement drives electron flow through
+                        the
+                        external circuit, powering the motor. On charging, the process is reversed.
+                    </p>
+                    <div class="battery-grid reveal">
+                        <div class="battery-part">
+                            <span class="icon">⊖</span>
+                            <div class="name">Anode</div>
+                            <div class="detail">Graphite (LiₓC₆)</div>
+                        </div>
+                        <div class="battery-part">
+                            <span class="icon">⟷</span>
+                            <div class="name">Electrolyte</div>
+                            <div class="detail">LiPF₆ in organic solvent</div>
+                        </div>
+                        <div class="battery-part">
+                            <span class="icon">⊕</span>
+                            <div class="name">Cathode</div>
+                            <div class="detail">LiCoO₂ / LiFePO₄</div>
+                        </div>
+                    </div>
+                    <div class="equation-box reveal">
+                        <h4>Lithium-Ion Redox Reaction (Overall)</h4>
+                        <div class="formula">LiCoO₂ + C₆ ⇌ Li₁₋ₓCoO₂ + LiₓC₆</div>
+                        <p class="equation-note">This reversible reaction allows thousands of charge-discharge cycles.
+                            Current
+                            research focuses on solid-state electrolytes and silicon anodes to increase energy density
+                            beyond
+                            300 Wh/kg.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════ 5. OPPORTUNITIES & CHALLENGES ═══════════════════════ -->
+            <section class="section-block" id="opportunities">
+                <div class="section-overlay"></div>
+                <div class="section-inner">
+                    <span class="section-number reveal">Section 05</span>
+                    <h2 class="section-heading reveal">Opportunities and Challenges</h2>
+
+                    <h3 class="reveal">Environmental Opportunities</h3>
+                    <p class="reveal">
+                        The most compelling benefit of renewable energy in transport is the dramatic reduction in
+                        greenhouse gas
+                        emissions and local air pollutants. A comprehensive analysis by CEEW estimates that if India
+                        achieves
+                        its 2030 EV targets, the transport sector could avoid approximately 846 million tonnes of
+                        cumulative CO₂
+                        emissions between 2020 and 2035. At the city level, replacing diesel buses with electric
+                        alternatives
+                        can reduce PM2.5 concentrations along bus corridors by 20-30%, directly improving respiratory
+                        health
+                        outcomes for millions of urban residents. Additionally, electric motors produce near-zero noise
+                        pollution compared to ICE vehicles, addressing a significant but often overlooked urban
+                        environmental
+                        challenge <a href="#ref-12" class="citation">[12]</a>.
+                    </p>
+
+                    <h3 class="reveal">Economic Opportunities</h3>
+                    <p class="reveal">
+                        The EV value chain — spanning lithium-ion cell manufacturing, battery pack assembly, motor
+                        production,
+                        charging infrastructure deployment, and battery recycling — represents a massive new industrial
+                        sector.
+                        Industry body ACMA estimates that the Indian EV component market alone will reach $100 billion
+                        by 2030,
+                        with the potential to create 10 million direct and indirect jobs. Furthermore, by reducing oil
+                        imports,
+                        the transition could save India upwards of ₹1 lakh crore annually in foreign exchange outflows,
+                        strengthening the rupee and improving the current account balance <a href="#ref-13"
+                            class="citation">[13]</a>.
+                    </p>
+
+                    <h3 class="reveal">Critical Challenges</h3>
+                    <p class="reveal">
+                        Despite the compelling opportunities, significant obstacles remain that could slow or derail the
+                        transition if not addressed proactively. The following table summarizes the comparative analysis
+                        of
+                        positive impacts and associated challenges:
+                    </p>
+
+                    <div class="reveal">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Positive Impacts</th>
+                                    <th>Challenges & Risks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Reduced CO₂ and pollutant emissions, improved air quality</td>
+                                    <td>High upfront cost of EVs (30-50% premium over ICE equivalents)</td>
+                                </tr>
+                                <tr>
+                                    <td>Lower operational costs (₹1/km vs. ₹6/km for petrol)</td>
+                                    <td>Inadequate EV charging infrastructure, especially in Tier-2/3 cities</td>
+                                </tr>
+                                <tr>
+                                    <td>Energy independence from crude oil imports</td>
+                                    <td>Lithium and cobalt import dependency — risk of mineral colonialism</td>
+                                </tr>
+                                <tr>
+                                    <td>10 million+ green jobs across the EV value chain</td>
+                                    <td>Workforce displacement in ICE manufacturing and petrol pump sector</td>
+                                </tr>
+                                <tr>
+                                    <td>Contribution to India's Paris Agreement and Net Zero targets</td>
+                                    <td>Battery disposal and recycling: potential new toxic waste crisis</td>
+                                </tr>
+                                <tr>
+                                    <td>Innovation in battery and smart grid technology</td>
+                                    <td>Grid capacity constraints; coal-dependent electricity negates EV benefits</td>
+                                </tr>
+                                <tr>
+                                    <td>Noise pollution reduction in urban areas</td>
+                                    <td>Range anxiety and long charging times limiting consumer adoption</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════ 6. GOVERNMENT POLICIES ═══════════════════════ -->
+            <section class="section-block" id="policies">
+                <div class="section-overlay"></div>
+                <div class="section-inner">
+                    <span class="section-number reveal">Section 06</span>
+                    <h2 class="section-heading reveal">Government Policy Framework</h2>
+
+                    <p class="reveal">
+                        The Government of India has deployed a multi-pronged policy framework to catalyze the transition
+                        to
+                        renewable energy in transportation. These policies span demand incentives, supply-side
+                        manufacturing
+                        support, infrastructure mandates, and long-term strategic commitments. The effectiveness of
+                        these
+                        policies will ultimately determine the pace and scale of the transition.
+                    </p>
+
+                    <div class="policy-grid">
+                        <div class="policy-card reveal">
+                            <div class="year-tag">Launched 2019 • ₹10,000 Crore</div>
+                            <h4>FAME-II Scheme</h4>
+                            <p>Faster Adoption and Manufacturing of Electric Vehicles Phase II provides demand subsidies
+                                for EV
+                                buyers and supports over 7,400 electric buses. It also funds charging stations at every
+                                25 km on
+                                highways.</p>
+                        </div>
+                        <div class="policy-card reveal">
+                            <div class="year-tag">Launched 2013</div>
+                            <h4>National Electric Mobility Mission Plan</h4>
+                            <p>Targets 6-7 million electric and hybrid vehicles on Indian roads annually by 2030,
+                                supported by a
+                                comprehensive roadmap for manufacturing, standards, and technology development.</p>
+                        </div>
+                        <div class="policy-card reveal">
+                            <div class="year-tag">Target 2025-26</div>
+                            <h4>Ethanol Blending Programme (EBP)</h4>
+                            <p>Achieved 12% blending in 2024, targeting E20 (20% ethanol in petrol) nationwide by
+                                2025-26.
+                                Projected to save ₹30,000 crore annually in crude oil imports.</p>
+                        </div>
+                        <div class="policy-card reveal">
+                            <div class="year-tag">Launched 2023 • ₹19,744 Crore</div>
+                            <h4>National Green Hydrogen Mission</h4>
+                            <p>Aims to establish India as a global hub for green hydrogen with 5 MTPA production
+                                capacity by
+                                2030, with transport being a key end-use application.</p>
+                        </div>
+                        <div class="policy-card reveal">
+                            <div class="year-tag">Launched 2022 • ₹18,100 Crore</div>
+                            <h4>PLI Scheme for ACC Battery</h4>
+                            <p>Production Linked Incentive for Advanced Chemistry Cell battery manufacturing — 50 GWh
+                                domestic
+                                capacity target to reduce import dependency on Chinese cells.</p>
+                        </div>
+                        <div class="policy-card reveal">
+                            <div class="year-tag">Target 2070</div>
+                            <h4>Net Zero 2070 Commitment</h4>
+                            <p>India's COP26 pledge to achieve net-zero carbon emissions by 2070. Transport
+                                decarbonization is a
+                                central pillar, requiring complete phase-out of fossil-fuel vehicles by mid-century.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════ 7. FUTURE OUTLOOK ═══════════════════════ -->
+            <section class="section-block" id="future">
+                <div class="section-overlay"></div>
+                <div class="section-inner">
+                    <span class="section-number reveal">Section 07</span>
+                    <h2 class="section-heading reveal">Future Outlook</h2>
+
+                    <p class="reveal">
+                        The trajectory of India's transport sector over the next two to five decades will be defined by
+                        the
+                        interplay of technological maturity, policy consistency, infrastructure investment, and consumer
+                        behavior change. The following timeline outlines key milestones that will shape this
+                        transformation:
+                    </p>
+
+                    <div class="timeline">
+                        <div class="timeline-item reveal">
+                            <div class="year">2025-26</div>
+                            <h4>E20 Ethanol Blending Achieved Nationwide</h4>
+                            <p>20% ethanol blend in petrol across all fuel stations. Estimated annual CO₂ reduction of
+                                7% from
+                                the petrol vehicle fleet and crude oil import savings of ₹30,000 crore.</p>
+                        </div>
+                        <div class="timeline-item reveal">
+                            <div class="year">2027</div>
+                            <h4>500,000+ Public EV Charging Points</h4>
+                            <p>Rapid densification of charging infrastructure driven by FAME-II mandates and private
+                                investment
+                                from companies like Tata Power, Adani, and ChargeZone.</p>
+                        </div>
+                        <div class="timeline-item reveal">
+                            <div class="year">2028</div>
+                            <h4>Green Hydrogen Buses Deployed in 10+ Cities</h4>
+                            <p>Pilot programs scaled up in Delhi, Mumbai, Pune, Bengaluru, and Leh. Intercity hydrogen
+                                bus
+                                corridors established on select national highways.</p>
+                        </div>
+                        <div class="timeline-item reveal">
+                            <div class="year">2030</div>
+                            <h4>30% of New Vehicle Sales are Electric</h4>
+                            <p>India achieves its EV penetration target, led by two-wheelers (50%+ electric) and
+                                three-wheelers
+                                (70%+ electric). 500 GW renewable energy ensures clean charging.</p>
+                        </div>
+                        <div class="timeline-item reveal">
+                            <div class="year">2030</div>
+                            <h4>Indian Railways Achieves Net Zero</h4>
+                            <p>Complete broad-gauge electrification. Solar and wind installations along railway
+                                corridors. The
+                                world's fourth-largest railway becomes climate-neutral.</p>
+                        </div>
+                        <div class="timeline-item reveal">
+                            <div class="year">2040</div>
+                            <h4>Phase-Out of New ICE Vehicle Sales Begins</h4>
+                            <p>Regulatory frameworks mandate all new passenger vehicle sales to be zero-emission
+                                (electric or
+                                hydrogen), aligning with European and American timelines.</p>
+                        </div>
+                        <div class="timeline-item reveal">
+                            <div class="year">2070</div>
+                            <h4>Net Zero India</h4>
+                            <p>Transport sector fully decarbonized. A mix of EVs, hydrogen, and renewable-powered rail
+                                delivers
+                                zero-emission mobility across the world's most populous nation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chart -->
+                    <div class="chart-wrapper reveal">
+                        <h3>Projected CO₂ Emissions: Business-As-Usual vs. Green Transition</h3>
+                        <canvas id="co2Chart" height="300"></canvas>
+                        <p class="chart-caption">Figure: Projected transport CO₂ emissions index (2020 = 100).
+                            Comparison of BAU
+                            vs. Accelerated Renewable Adoption scenario.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════ CONCLUSION ═══════════════════════ -->
+            <section class="section-block" id="conclusion" style="min-height: auto;">
+                <div class="section-overlay"></div>
+                <div class="section-inner">
+                    <span class="section-number reveal">Conclusion</span>
+                    <h2 class="section-heading reveal">Summary and Recommendations</h2>
+
+                    <div class="conclusion-box reveal">
+                        <p>
+                            Renewable energy integration in India's transportation sector represents one of the most
+                            significant
+                            structural transformations in the nation's economic history. The shift from fossil-fuel
+                            dependence
+                            to an ecosystem powered by electric vehicles, green hydrogen, biofuels, and electrified
+                            railways
+                            offers enormous environmental, economic, and strategic benefits — from slashing CO₂
+                            emissions and
+                            air pollution to strengthening energy security and creating millions of new jobs. However,
+                            the
+                            transition is neither automatic nor guaranteed. It requires sustained policy commitment,
+                            massive
+                            infrastructure investment, breakthroughs in battery chemistry and recycling, development of
+                            a
+                            skilled workforce, and — critically — the simultaneous greening of India's electricity grid.
+                            Without
+                            clean power generation, even universal EV adoption will merely shift emissions from the
+                            tailpipe to
+                            the power plant. The challenge is immense, but so is the opportunity: getting this
+                            transition right
+                            could position India as a global leader in sustainable mobility and green industrial
+                            manufacturing
+                            for decades to come.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+            <footer class="site-footer" id="references">
+                <div class="footer-content">
+                    <h3>References</h3>
+                    <p class="reference-names">
+                        <a id="ref-1" href="https://www.niti.gov.in" target="_blank" rel="noopener noreferrer">NITI</a>
+                        •
+                        <a id="ref-2" href="https://www.iea.org/reports/india-energy-outlook-2021" target="_blank"
+                            rel="noopener noreferrer">IEA</a> •
+                        <a id="ref-3" href="https://morth.nic.in" target="_blank" rel="noopener noreferrer">MoRTH</a> •
+                        <a id="ref-4" href="https://www.iqair.com/world-air-quality-report" target="_blank"
+                            rel="noopener noreferrer">IQAir</a> •
+                        <a id="ref-5"
+                            href="https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(20)30298-9/fulltext"
+                            target="_blank" rel="noopener noreferrer">Lancet</a> •
+                        <a id="ref-6" href="https://ppac.gov.in" target="_blank" rel="noopener noreferrer">PPAC</a> •
+                        <a id="ref-7" href="https://www.niti.gov.in" target="_blank"
+                            rel="noopener noreferrer">NITI-RMI</a> •
+                        <a id="ref-8" href="https://www.smev.in/statistics" target="_blank"
+                            rel="noopener noreferrer">SMEV</a> •
+                        <a id="ref-9" href="https://mopng.gov.in/en/refining/bio-fuel" target="_blank"
+                            rel="noopener noreferrer">MoPNG</a> •
+                        <a id="ref-10" href="https://mnre.gov.in/green-hydrogen-mission/" target="_blank"
+                            rel="noopener noreferrer">MNRE</a> •
+                        <a id="ref-11" href="https://indianrailways.gov.in" target="_blank"
+                            rel="noopener noreferrer">Indian
+                            Railways</a> •
+                        <a id="ref-12" href="https://www.ceew.in" target="_blank" rel="noopener noreferrer">CEEW</a> •
+                        <a id="ref-13" href="https://www.acma.in" target="_blank" rel="noopener noreferrer">ACMA</a>
+                    </p>
+                </div>
+            </footer>
+
+        </main>
+
+        <aside class="news-sidebar" aria-labelledby="news-sidebar-heading">
+            <div class="news-sidebar-card">
+                <h2 id="news-sidebar-heading">Live News</h2>
+                <p class="news-sidebar-subtitle">Related to EVs, ethanol blending, green hydrogen, rail electrification,
+                    emissions, and policy.</p>
+                <p id="news-status" class="news-status" role="status" aria-live="polite">Loading latest updates...</p>
+                <p id="news-updated" class="news-updated"></p>
+                <div id="news-list" class="news-list"></div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
