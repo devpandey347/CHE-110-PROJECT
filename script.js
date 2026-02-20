@@ -308,11 +308,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== PROGRESS BAR =====
     const progressBar = document.getElementById('progress-bar');
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
-    });
 
     // ===== SCROLL REVEAL =====
     const observer = new IntersectionObserver((entries) => {
@@ -332,7 +327,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const trackedSections = Array.from(document.querySelectorAll('.section-block, .site-footer[id]'));
     let currentBg = null;
     let bgZIndex = 1;
-    let ticking = false;
 
     const setActiveBg = (sectionId) => {
         if (!sectionId || sectionId === currentBg || !bgLayerMap.has(sectionId)) {
@@ -352,7 +346,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateBgFromViewport = () => {
-        ticking = false;
         const activationLine = window.innerHeight * 0.32;
         let candidateSection = null;
         let fallbackSection = null;
@@ -393,10 +386,27 @@ document.addEventListener('DOMContentLoaded', () => {
         bgObserver.observe(section);
     });
 
+    // ===== SINGLE MERGED SCROLL LISTENER (passive + rAF throttled) =====
+    const navbar = document.querySelector('.navbar');
+    let scrollTicking = false;
+
     window.addEventListener('scroll', () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(updateBgFromViewport);
+        if (scrollTicking) return;
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+            // Progress bar
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (progressBar) progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
+
+            // Navbar shadow
+            if (navbar) navbar.style.boxShadow = scrollTop > 30 ? '0 2px 12px rgba(60,50,30,0.08)' : 'none';
+
+            // Background crossfade
+            updateBgFromViewport();
+
+            scrollTicking = false;
+        });
     }, { passive: true });
 
     window.addEventListener('resize', updateBgFromViewport);
@@ -475,12 +485,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // ===== NAVBAR SHADOW ON SCROLL =====
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        navbar.style.boxShadow = window.scrollY > 30 ? '0 2px 12px rgba(60,50,30,0.08)' : 'none';
-    });
 
     initializeNewsSidebar();
 

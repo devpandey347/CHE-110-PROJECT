@@ -83,6 +83,7 @@ img {
     transform: scale(1.06);
     transition: opacity 2.4s ease-in-out, transform 4.4s ease-in-out;
     will-change: opacity;
+    contain: strict;
 }
 
 .bg-layer.active {
@@ -882,6 +883,20 @@ p {
         line-height: 1.85;
     }
 
+    /* ── Kill expensive GPU compositing on mobile ── */
+    .bg-layer {
+        will-change: auto;
+        transition: opacity 1.2s ease-in-out;
+        transform: none !important;
+        /* no scale animation on mobile */
+    }
+
+    .bg-layer.active {
+        filter: none;
+        /* blur(3px) causes repaint on every scroll */
+        transform: none !important;
+    }
+
     /* ── Close & reopen buttons visible only on mobile ── */
     .news-close-btn {
         display: flex;
@@ -958,22 +973,24 @@ p {
 
     /* ── Nav ── */
     .navbar-inner {
-        flex-wrap: wrap;
-        gap: 4px 0;
-        padding: 8px 16px;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        gap: 0;
+        padding: 0 16px;
+        height: 52px;
         justify-content: center;
-        gap: 4px 12px;
-        width: 100%;
-        padding-bottom: 4px;
+        /* center the brand */
     }
 
-    .nav-links a {
-        font-size: 0.72rem;
+    /* Hide nav links on mobile — brand only */
+    .nav-links {
+        display: none;
+    }
+
+    /* Enlarge brand on mobile */
+    .nav-brand {
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+        text-align: center;
     }
 
     /* ── Sections ── */
@@ -988,6 +1005,22 @@ p {
 
     .section-heading {
         font-size: clamp(1.4rem, 5vw, 2rem);
+    }
+
+    /* ── Hero title bigger on mobile ── */
+    .hero-content h1 {
+        font-size: clamp(1.75rem, 8vw, 2.6rem);
+        letter-spacing: -0.2px;
+    }
+
+    .project-tag {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1rem;
     }
 
     /* ── Stats ── */
@@ -1061,10 +1094,10 @@ p {
     }
 
     .hero-content h1 {
-        font-size: clamp(1.3rem, 6vw, 1.9rem);
+        font-size: clamp(1.5rem, 7vw, 2rem);
     }
 
     .nav-brand {
-        font-size: 0.78rem;
+        font-size: 1.1rem;
     }
 }
