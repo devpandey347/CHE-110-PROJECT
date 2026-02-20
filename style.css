@@ -104,6 +104,44 @@ img {
     transition: width 0.1s linear;
 }
 
+/* ===== HAMBURGER BUTTON (desktop: hidden) ===== */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 19px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: var(--heading);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform-origin: center;
+}
+
+/* Animated X when open */
+.nav-hamburger.open span:nth-child(1) {
+    transform: translateY(8.25px) rotate(45deg);
+}
+
+.nav-hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-8.25px) rotate(-45deg);
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
     position: sticky;
@@ -318,6 +356,14 @@ img {
     align-items: center;
     justify-content: flex-start;
     padding: 120px 40px 120px 100px;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 100vh;
+}
+
+/* First two sections don’t need lazy rendering */
+#hero,
+#introduction {
+    content-visibility: visible;
 }
 
 .section-overlay {
@@ -977,20 +1023,57 @@ p {
         gap: 0;
         padding: 0 16px;
         height: 52px;
-        justify-content: center;
-        /* center the brand */
+        justify-content: space-between;
     }
 
-    /* Hide nav links on mobile — brand only */
+    /* Show hamburger, hide links by default */
+    .nav-hamburger {
+        display: flex;
+    }
+
+    /* Nav links: hidden by default, shown as dropdown when open */
     .nav-links {
         display: none;
+        position: absolute;
+        top: 52px;
+        left: 0;
+        right: 0;
+        background: rgba(250, 247, 242, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 0 12px;
+        z-index: 8999;
+        box-shadow: 0 6px 20px rgba(60, 50, 30, 0.10);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 11px 24px;
+        font-size: 0.88rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        border-bottom: 1px solid rgba(217, 207, 192, 0.35);
+    }
+
+    .nav-links li:last-child a {
+        border-bottom: none;
     }
 
     /* Enlarge brand on mobile */
     .nav-brand {
-        font-size: 1.15rem;
-        letter-spacing: 0.5px;
-        text-align: center;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
     }
 
     /* ── Sections ── */

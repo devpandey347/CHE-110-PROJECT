@@ -415,6 +415,45 @@ document.addEventListener('DOMContentLoaded', () => {
     setActiveBg(initialSection);
     updateBgFromViewport();
 
+    // ===== HAMBURGER MENU =====
+    const hamburger = document.getElementById('nav-hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        // Close when any nav link is tapped
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // ===== LAZY-LOAD BACKGROUND IMAGES (mobile performance) =====
+    // On mobile, delay loading of bg images until their section is near viewport
+    const isMobileDevice = () => window.innerWidth <= 768;
+    const bgLayerNodes = document.querySelectorAll('.bg-layer[data-for]');
+
+    if (isMobileDevice()) {
+        // Swap to smaller images on mobile (800px wide instead of 1920px)
+        bgLayerNodes.forEach(layer => {
+            const orig = layer.style.backgroundImage;
+            if (!orig) return;
+            // Unsplash: add w=800&q=70
+            const smaller = orig
+                .replace(/w=1920/g, 'w=800')
+                .replace(/q=80/g, 'q=65')
+                // picsum: replace /1920/1080 with /800/600
+                .replace(/picsum\.photos\/id\/(\d+)\/1920\/1080/g, 'picsum.photos/id/$1/800/600');
+            layer.style.backgroundImage = smaller;
+        });
+    }
+
     // ===== SMOOTH SCROLL FOR NAV =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
