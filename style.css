@@ -929,18 +929,83 @@ p {
         line-height: 1.85;
     }
 
-    /* ── Kill expensive GPU compositing on mobile ── */
+    /* ───────────────────────────────────────────────────────────
+       MOBILE PERFORMANCE — ALL GPU-HEAVY EFFECTS STRIPPED
+    ─────────────────────────────────────────────────────────── */
+
+    /* 1. Kill the entire fixed-bg crossfade system — biggest win */
+    .bg-layers {
+        display: none;
+    }
+
+    /* 2. Give every section a plain cream background instead */
+    .section-block {
+        background: var(--cream);
+    }
+
+    /* 3. Strip backdrop-filter from every overlay (10 blurred layers = frame drops) */
+    .section-overlay,
+    #hero .hero-overlay {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(250, 247, 242, 0.97);
+        transition: none;
+    }
+
+    #hero .hero-overlay {
+        background: rgba(250, 247, 242, 0.88);
+    }
+
+    /* 4. Navbar — no blur, solid background */
+    .navbar {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(250, 247, 242, 0.99);
+    }
+
+    /* 5. Nav dropdown — no blur */
+    .nav-links {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgb(250, 247, 242);
+    }
+
+    /* 6. News sidebar card — no blur */
+    .news-sidebar-card {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgb(250, 247, 242);
+    }
+
+    /* 7. Footer — no blur */
+    .site-footer {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* 8. bg-layer: remove all animation overhead */
     .bg-layer {
         will-change: auto;
-        transition: opacity 1.2s ease-in-out;
+        transition: none;
         transform: none !important;
-        /* no scale animation on mobile */
+        animation: none;
     }
 
     .bg-layer.active {
         filter: none;
-        /* blur(3px) causes repaint on every scroll */
         transform: none !important;
+    }
+
+    /* 9. Disable reveal animations on mobile (less layout thrash) */
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* 10. Remove heavy transitions on section overlays */
+    .section-overlay {
+        transition: none;
     }
 
     /* ── Close & reopen buttons visible only on mobile ── */

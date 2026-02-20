@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // ===== BACKGROUND LAYER CROSSFADE ON SCROLL =====
-    // Each section id maps to one .bg-layer via data-for.
+    // Skipped entirely on mobile — bg-layers is hidden via CSS
     const bgLayers = Array.from(document.querySelectorAll('.bg-layer'));
     const bgLayerMap = new Map(bgLayers.map(layer => [layer.dataset.for, layer]));
     const trackedSections = Array.from(document.querySelectorAll('.section-block, .site-footer[id]'));
@@ -329,10 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let bgZIndex = 1;
 
     const setActiveBg = (sectionId) => {
-        if (!sectionId || sectionId === currentBg || !bgLayerMap.has(sectionId)) {
-            return;
-        }
-
+        if (!sectionId || sectionId === currentBg || !bgLayerMap.has(sectionId)) return;
         const targetLayer = bgLayerMap.get(sectionId);
         currentBg = sectionId;
         bgLayers.forEach(layer => {
@@ -350,41 +347,30 @@ document.addEventListener('DOMContentLoaded', () => {
         let candidateSection = null;
         let fallbackSection = null;
         let minTop = Infinity;
-
         trackedSections.forEach(section => {
             const sectionId = section.id;
             if (!bgLayerMap.has(sectionId)) return;
-
             const rect = section.getBoundingClientRect();
-            const intersectsActivationLine = rect.top <= activationLine && rect.bottom >= activationLine;
-
-            if (intersectsActivationLine) {
-                candidateSection = section;
-            }
-
-            if (rect.top >= 0 && rect.top < minTop) {
-                minTop = rect.top;
-                fallbackSection = section;
-            }
+            if (rect.top <= activationLine && rect.bottom >= activationLine) candidateSection = section;
+            if (rect.top >= 0 && rect.top < minTop) { minTop = rect.top; fallbackSection = section; }
         });
-
-        if (candidateSection) {
-            setActiveBg(candidateSection.id);
-        } else if (fallbackSection) {
-            setActiveBg(fallbackSection.id);
-        }
+        if (candidateSection) setActiveBg(candidateSection.id);
+        else if (fallbackSection) setActiveBg(fallbackSection.id);
     };
 
-    const bgObserver = new IntersectionObserver(() => {
-        updateBgFromViewport();
-    }, {
-        threshold: [0, 0.08, 0.2, 0.35],
-        rootMargin: '-5% 0px -60% 0px'
-    });
+    const onMobile = window.innerWidth <= 768;
 
-    trackedSections.forEach(section => {
-        bgObserver.observe(section);
-    });
+    if (!onMobile) {
+        // Only run bg crossfade on desktop
+        const bgObserver = new IntersectionObserver(() => {
+            updateBgFromViewport();
+        }, { threshold: [0, 0.08, 0.2, 0.35], rootMargin: '-5% 0px -60% 0px' });
+        trackedSections.forEach(section => bgObserver.observe(section));
+
+        const initialSection = window.location.hash ? window.location.hash.slice(1) : 'hero';
+        setActiveBg(initialSection);
+        updateBgFromViewport();
+    }
 
     // ===== SINGLE MERGED SCROLL LISTENER (passive + rAF throttled) =====
     const navbar = document.querySelector('.navbar');
@@ -394,26 +380,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (scrollTicking) return;
         scrollTicking = true;
         requestAnimationFrame(() => {
-            // Progress bar
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+            // Progress bar
             if (progressBar) progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
 
             // Navbar shadow
             if (navbar) navbar.style.boxShadow = scrollTop > 30 ? '0 2px 12px rgba(60,50,30,0.08)' : 'none';
 
-            // Background crossfade
-            updateBgFromViewport();
+            // Background crossfade — desktop only
+            if (!onMobile) updateBgFromViewport();
 
             scrollTicking = false;
         });
     }, { passive: true });
 
-    window.addEventListener('resize', updateBgFromViewport);
-
-    const initialSection = window.location.hash ? window.location.hash.slice(1) : 'hero';
-    setActiveBg(initialSection);
-    updateBgFromViewport();
+    if (!onMobile) window.addEventListener('resize', updateBgFromViewport);
 
     // ===== HAMBURGER MENU =====
     const hamburger = document.getElementById('nav-hamburger');
