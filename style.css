@@ -849,32 +849,66 @@ p {
         line-height: 1.85;
     }
 
+    /* ── Sidebar: drop out of fixed positioning and flow below content ── */
     .news-sidebar {
-        width: calc(100vw - 32px);
-        right: 16px;
-        bottom: 16px;
+        position: static;
+        width: 100%;
+        right: auto;
+        bottom: auto;
+        z-index: 10;
+        padding: 0 16px 32px;
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto !important;
+        transition: none;
     }
 
+    /* Disable footer-hide behaviour on mobile (element is already in flow) */
     .news-sidebar.footer-visible {
-        transform: translateY(10px);
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
     }
 
     .news-sidebar-card {
-        min-height: 320px;
-        max-height: 380px;
+        min-height: auto;
+        max-height: none;
+        /* let content grow naturally */
+        border-radius: 12px;
+        padding: 20px 16px;
+        width: 100%;
     }
 
     .news-list {
-        max-height: 220px;
+        max-height: none;
+        /* no scroll lock on mobile */
+        overflow-y: visible;
+    }
+
+    /* ── Nav ── */
+    .navbar-inner {
+        flex-wrap: wrap;
+        gap: 4px 0;
+        padding: 8px 16px;
     }
 
     .nav-links {
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 12px;
+        width: 100%;
+        padding-bottom: 4px;
     }
 
+    .nav-links a {
+        font-size: 0.72rem;
+    }
+
+    /* ── Sections ── */
     .section-block {
         min-height: auto;
-        padding: 80px 28px 80px 28px;
+        padding: 80px 20px 80px 20px;
     }
 
     .section-inner {
@@ -885,6 +919,7 @@ p {
         font-size: clamp(1.4rem, 5vw, 2rem);
     }
 
+    /* ── Stats ── */
     .stats-strip {
         grid-template-columns: repeat(2, 1fr);
         gap: 18px;
@@ -896,6 +931,7 @@ p {
         font-size: 2.1rem;
     }
 
+    /* ── Grids ── */
     .policy-grid {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -906,8 +942,12 @@ p {
         gap: 16px;
     }
 
+    /* ── Table: horizontal scroll ── */
     .comparison-table {
         font-size: 0.92rem;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .comparison-table thead th,
@@ -915,6 +955,7 @@ p {
         padding: 12px 14px;
     }
 
+    /* ── Cards / boxes ── */
     .policy-card {
         padding: 20px;
     }
@@ -937,4 +978,22 @@ p {
     }
 }
 
-/* sidebar stays fixed at all sizes; no overrides needed */
+@media (max-width: 420px) {
+    .stats-strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .stat-value {
+        font-size: 1.7rem;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.3rem, 6vw, 1.9rem);
+    }
+
+    .nav-brand {
+        font-size: 0.78rem;
+    }
+}
