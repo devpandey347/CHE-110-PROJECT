@@ -261,6 +261,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 sidebarElement.classList.toggle('footer-visible', entries[0].isIntersecting);
             }, { threshold: 0.12 }).observe(footerElement);
         }
+
+        // ── Mobile close / reopen ─────────────────────────────────────────────
+        const closeBtn = document.getElementById('news-close-btn');
+
+        // Create reopen pill dynamically
+        const reopenBtn = document.createElement('button');
+        reopenBtn.className = 'news-reopen-btn';
+        reopenBtn.id = 'news-reopen-btn';
+        reopenBtn.setAttribute('aria-label', 'Show news panel');
+        reopenBtn.innerHTML = '&#128240; Live News';
+        document.body.appendChild(reopenBtn);
+
+        const isMobile = () => window.innerWidth <= 768;
+
+        if (closeBtn && sidebarElement) {
+            closeBtn.addEventListener('click', () => {
+                if (!isMobile()) return;
+                sidebarElement.classList.add('dismissed');
+                reopenBtn.style.display = 'flex';
+                sessionStorage.setItem('newsDismissed', '1');
+            });
+
+            reopenBtn.addEventListener('click', () => {
+                sidebarElement.classList.remove('dismissed');
+                reopenBtn.style.display = 'none';
+                sessionStorage.removeItem('newsDismissed');
+                sidebarElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            // Restore dismissed state on page load
+            if (isMobile() && sessionStorage.getItem('newsDismissed')) {
+                sidebarElement.classList.add('dismissed');
+                reopenBtn.style.display = 'flex';
+            }
+
+            // Reset when resizing back to desktop
+            window.addEventListener('resize', () => {
+                if (!isMobile()) {
+                    sidebarElement.classList.remove('dismissed');
+                    reopenBtn.style.display = 'none';
+                }
+            });
+        }
     };
 
     // ===== PROGRESS BAR =====
